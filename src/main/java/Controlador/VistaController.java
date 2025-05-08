@@ -91,14 +91,6 @@ public class VistaController {
                 return ModeloController.inciarSesionUsuario(usr,con,tipoUsr);
             }
 
-            public static void ventanaInformesEquipos(JFrame ventana) {
-                ventana.dispose();
-            }
-
-            public static void ventanaVerResultadosUltimJornada(JFrame ventana) {
-                ventana.dispose();
-            }
-
         /*
         *JORNADAS
          */
@@ -333,4 +325,13 @@ public class VistaController {
                     return vc.isConfirmado();
                 }
 
+
+        /**
+         * USUARIO
+         */
+            public static void VentanaUsuarioV2(String nombre,JFrame ventana){
+                ventana.dispose();
+                VentanaUsuarioV2 vu2 = new VentanaUsuarioV2(nombre);
+                vu2.setVisible(true);
+            }
 }

@@ -64,7 +64,7 @@ public class VentanaIniciarSesionV2 extends JFrame {
                             VistaController.VentanaAdministradorV2(nombre.getText(),VentanaIniciarSesionV2.this);
                             break;
                         case "Usuario":
-                            //VistaController.VentanaUsuarioV2(nombre.getText(),VentanaIniciarSesionV2.this);
+                            VistaController.VentanaUsuarioV2(nombre.getText(),VentanaIniciarSesionV2.this);
                             break;
                     }
                 }
