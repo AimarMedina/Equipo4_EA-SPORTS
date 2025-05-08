@@ -6,15 +6,17 @@ import Vista.*;
 import javax.swing.*;
 import java.time.LocalDate;
 import java.util.List;
-
+/**
+ * Controlador para gestionar las operaciones relacionadas con la vista del proyecto.
+ */
 public class VistaController {
     private static ModeloController mc = new ModeloController();
 
-    /*
+    /**
     *FUNCIONES
      */
 
-        /*
+        /**
         *JUGADORES
          */
             public static boolean inscribirJugador(String nombre, String apellido, String nacionalidad, LocalDate fechaParseada, String nickname, float sueldoFloat, String rol, String equipo) {
@@ -57,7 +59,7 @@ public class VistaController {
                 return ModeloController.obtenerRolJugadorNick(nickname);
             }
 
-        /*
+        /**
         *EQUIPO
         */
             public static List<String> listaEquipos(){
@@ -84,21 +86,21 @@ public class VistaController {
                 return ModeloController.obtenerEquiposConFechas();
             }
 
-        /*
+        /**
         *USUARIO
          */
             public static boolean inciarSesionUsuario(String usr, String con, String tipoUsr) {
                 return ModeloController.inciarSesionUsuario(usr,con,tipoUsr);
             }
 
-        /*
+        /**
         *JORNADAS
          */
             public static List<String[]> obtenerJornadas(){
                 return ModeloController.obtenerJornadas();
             }
 
-        /*
+        /**
         *COMPETICION
          */
             public static boolean abrirCompeticion(){
@@ -117,11 +119,11 @@ public class VistaController {
                 return ModeloController.estadoCompeticion();
             }
 
-    /*
+    /**
     *VENTANAS NUEVAS
      */
 
-        /*
+        /**
         *PRINCIPAL
          */
             public static void VentanaPrincipalV2(){
@@ -129,7 +131,7 @@ public class VistaController {
                 vp2.setVisible(true);
             }
 
-        /*
+        /**
         /SELECCION USUARIO
          */
             public static void ModalDescripcionUsuariosV2(String nombre){
@@ -143,7 +145,7 @@ public class VistaController {
                 vsu2.setVisible(true);
             }
 
-            /*
+            /**
             *VENTANA INICIAR SESCION
              */
                 public static void VentanaInciarSesionV2(String tipoUsr,JFrame ventana){
@@ -151,7 +153,7 @@ public class VistaController {
                     VentanaIniciarSesionV2 vis2 = new VentanaIniciarSesionV2(tipoUsr);
                     vis2.setVisible(true);
                 }
-        /*
+        /**
         *VENTANAS ADMINISTRADOR
          */
             public static void VentanaAdministradorV2(String nombre, JFrame ventana) {
@@ -160,7 +162,7 @@ public class VistaController {
                 va2.setVisible(true);
             }
 
-            /*
+            /**
             *GESTION JUGADORES
              */
                 public static void VentanaGestionJugadoresV2(JFrame ventana, String nombre) {
@@ -169,7 +171,7 @@ public class VistaController {
                     vg2.setVisible(true);
                 }
 
-                /*
+                /**
                 *INSCRIBIR JUGADOR
                  */
                     public static void ModalInscripcionJugadoresV2() {
@@ -177,7 +179,7 @@ public class VistaController {
                         vg2.setVisible(true);
                     }
 
-                /*
+                /**
                 *ELIMINAR JUGADOR
                  */
                     public static void ModalEliminacionJugadoresV2(){
@@ -185,7 +187,7 @@ public class VistaController {
                         mej2.setVisible(true);
                     }
 
-                /*
+                /**
                 *MODIFICAR JUGADOR
                  */
                     public static void ModalModificarJugadorV2(JDialog modal,String jugador){
@@ -199,7 +201,7 @@ public class VistaController {
                         msj2.setVisible(true);
                     }
 
-                /*
+                /**
                 *MOSTRAR JUGADOR
                  */
                     public static void ModalMostrarJugadoresV2(){
@@ -207,7 +209,7 @@ public class VistaController {
                         mmj2.setVisible(true);
                     }
 
-            /*
+            /**
             *GESTION EQUIPOS
              */
                 public static void VentanaGestionEquiposV2(JFrame ventana, String nombre) {
@@ -216,14 +218,14 @@ public class VistaController {
                     vg2.setVisible(true);
                 }
 
-                /*
+                /**
                 *INSCRIBIR EQUIPO
                  */
                         public static void ModalInscripcionEquiposV2(){
                             ModalInscripcionEquipoV2 mme2 = new ModalInscripcionEquipoV2();
                             mme2.setVisible(true);
                         }
-                /*
+                /**
                 *ELIMINAR EQUIPO
                  */
                     public static void ModalEliminacionEquiposV2(){
@@ -231,7 +233,7 @@ public class VistaController {
                         mee2.setVisible(true);
                     }
 
-                /*
+                /**
                 *MODIFICAR EQUIPO
                  */
                     public static void ModalModificarEquipoV2(JDialog modal,String equipo){
@@ -245,7 +247,7 @@ public class VistaController {
                         mse2.setVisible(true);
                     }
 
-                /*
+                /**
                 *MOSTRAR EQUIPO
                  */
                     public static void ModalMostrarEquiposV2(){
@@ -253,7 +255,7 @@ public class VistaController {
                         mme2.setVisible(true);
                     }
 
-            /*
+            /**
             *GESTION JORNADAS
              */
                 public static void VentanaGestionJornadasV2(JFrame ventana,String nombre) {
@@ -262,7 +264,7 @@ public class VistaController {
                     vgj2.setVisible(true);
                 }
 
-                /*
+                /**
                 *MOSTRAR JORNADAS
                  */
                     public static void ModalMostrarJornadasV2(){
@@ -270,7 +272,7 @@ public class VistaController {
                         mmj2.setVisible(true);
                     }
 
-            /*
+            /**
             *GESTION ENFRENTAMIENTOS
              */
                 public static void VentanaGestionEnfrentamientosV2(JFrame ventana, String nombre) {
@@ -279,7 +281,7 @@ public class VistaController {
                     vge2.setVisible(true);
                 }
 
-                /*
+                /**
                 *MOSTRAR ENFRENTAMIENTOS
                  */
                     public static void ModalMostrarEnfrentamientosV2(){
@@ -291,7 +293,7 @@ public class VistaController {
                         return ModeloController.obtenerEnfrentamientos();
                     }
 
-            /*
+            /**
             *GESTION COMPETICION
              */
                 public static void VentanaGestionCompeticionV2(JFrame ventana,String nombre) {
@@ -300,7 +302,7 @@ public class VistaController {
                     vgc2.setVisible(true);
                 }
 
-                /*
+                /**
                 *CERRAR COMPETICION
                  */
                     public static boolean ModalConfirmarCerrarCompeV2(){
@@ -316,7 +318,7 @@ public class VistaController {
                         return mdg2.getGanadorPerdedor();
                     }
 
-            /*
+            /**
             *OTROS
              */
                 public static boolean ModalAdvertencia(){

@@ -7,6 +7,10 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Clase EnfrentamientoDAO que gestiona las operaciones relacionadas con la tabla de enfrentamientos en la base de datos.
+ */
+
 public class EnfrentamientoDAO {
     /**
      * Crea un nuevo enfrentamiento en la base de datos.
