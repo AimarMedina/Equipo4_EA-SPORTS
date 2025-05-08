@@ -9,7 +9,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.Objects;
-
+/**
+ * Clase que representa la ventana de gestión de jugadores.
+ */
 public class VentanaGestionJugadoresV2 extends JFrame {
     private JButton mostrarJugadores;
     private JButton retroceder;
@@ -17,7 +19,12 @@ public class VentanaGestionJugadoresV2 extends JFrame {
     private JButton eliminarJugador;
     private JButton modificarJugador;
     private JPanel pPrincipal;
-
+    /**
+     * Constructor de la clase VentanaGestionJugadoresV2.
+     * Configura la ventana de gestión de jugadores, inicializa los componentes y define los eventos de los botones.
+     *
+     * @param nombre Nombre del usuario administrador que se mostrará en la ventana.
+     */
     public VentanaGestionJugadoresV2(String nombre) {
 
         setContentPane(pPrincipal);
@@ -78,7 +85,9 @@ public class VentanaGestionJugadoresV2 extends JFrame {
             }
         });
 
-        //ACCIONES
+        /**
+         * ACCIONES
+         */
         inscribirJugador.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

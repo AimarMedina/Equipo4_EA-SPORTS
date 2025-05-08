@@ -6,13 +6,18 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.util.List;
 import java.util.Objects;
-
+/**
+ * Clase que representa un cuadro de diálogo para la eliminación de equipos.
+ */
 public class ModalEliminacionEquiposV2 extends JDialog {
     private JPanel pPrincipal;
     private JComboBox equipos;
     private JButton eliminar;
     private JButton cancelar;
-
+    /**
+     * Constructor de la clase ModalEliminacionEquiposV2.
+     * Configura el cuadro de diálogo, inicializa los componentes y define los eventos de los botones.
+     */
     public ModalEliminacionEquiposV2() {
         setContentPane(pPrincipal);
         setModal(true);
@@ -57,7 +62,10 @@ public class ModalEliminacionEquiposV2 extends JDialog {
             }
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     }
-
+    /**
+     * Acción ejecutada al presionar el botón "Eliminar".
+     * Verifica si se seleccionó un equipo válido, muestra una advertencia y elimina el equipo si es confirmado.
+     */
     private void onOK() {
         String equipoSeleccionado = (String) equipos.getSelectedItem();
 
@@ -77,16 +85,13 @@ public class ModalEliminacionEquiposV2 extends JDialog {
         }
 
     }
-
+    /**
+     * Acción ejecutada al presionar el botón "Cancelar" o cerrar la ventana.
+     * Cierra el cuadro de diálogo.
+     */
     private void onCancel() {
         // add your code here if necessary
         dispose();
     }
 
-    public static void main(String[] args) {
-        ModalEliminacionEquiposV2 dialog = new ModalEliminacionEquiposV2();
-        dialog.pack();
-        dialog.setVisible(true);
-        System.exit(0);
-    }
 }

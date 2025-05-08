@@ -3,13 +3,22 @@ package Vista;
 import javax.swing.*;
 import java.awt.event.*;
 import java.util.Objects;
-
+/**
+ * Clase que representa un cuadro de diálogo para mostrar una descripción de las opciones disponibles
+ * según el tipo de usuario (Administrador o Usuario).
+ */
 public class ModalDescripcionUsuariosV2 extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JList<String> descripcion;
     private DefaultListModel<String> modelo = new DefaultListModel<>();
-
+    /**
+     * Constructor de la clase ModalDescripcionUsuariosV2.
+     * Configura el cuadro de diálogo, establece las opciones disponibles según el tipo de usuario
+     * y define los eventos de los botones.
+     *
+     * @param usr Tipo de usuario ("Administrador" o "Usuario") que determina las opciones mostradas.
+     */
     public ModalDescripcionUsuariosV2(String usr) {
         setContentPane(contentPane);
         setModal(true);
@@ -61,20 +70,21 @@ public class ModalDescripcionUsuariosV2 extends JDialog {
             }
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     }
-
+    /**
+     * Acción ejecutada al presionar el botón "OK".
+     * Limpia el modelo de la lista y cierra el cuadro de diálogo.
+     */
     private void onOK() {
         modelo.removeAllElements();
         dispose();
     }
-
+    /**
+     * Acción ejecutada al cancelar o cerrar el cuadro de diálogo.
+     * Limpia el modelo de la lista y cierra el cuadro de diálogo.
+     */
     private void onCancel() {
         modelo.removeAllElements();
         dispose();
     }
 
-    public static void main(String[] args) {
-        ModalDescripcionUsuariosV2 dialog = new ModalDescripcionUsuariosV2("Administrador");
-        dialog.setVisible(true);
-        System.exit(0);
-    }
 }

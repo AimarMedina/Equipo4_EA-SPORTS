@@ -9,7 +9,9 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.Objects;
-
+/**
+ * Clase que representa un cuadro de diálogo para modificar los datos de un equipo.
+ */
 public class ModalModificarEquipoV2 extends JDialog {
     private JPanel pPrincipal;
     private JButton buttonOK;
@@ -22,7 +24,12 @@ public class ModalModificarEquipoV2 extends JDialog {
     private LocalDate fechaParseada;
     private LocalDate fechaMax = LocalDate.now();
     private LocalDate fechaMin = LocalDate.parse("02/06/2020", DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-
+    /**
+     * Constructor de la clase ModalModificarEquipoV2.
+     * Configura el cuadro de diálogo, inicializa los componentes y define los eventos de los botones.
+     *
+     * @param equipo Nombre del equipo que se desea modificar.
+     */
     public ModalModificarEquipoV2(String equipo) {
         setContentPane(pPrincipal);
         setModal(true);
@@ -61,7 +68,11 @@ public class ModalModificarEquipoV2 extends JDialog {
             }
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     }
-
+    /**
+     * Acción ejecutada al presionar el botón "OK".
+     * Valida los datos ingresados, verifica duplicados y realiza la modificación si es válida.
+     * Muestra mensajes de error en caso de datos incorrectos.
+     */
     private void onOK() {
         try {
             if (nombre.getText().isEmpty()) {
@@ -103,7 +114,10 @@ public class ModalModificarEquipoV2 extends JDialog {
             JOptionPane.showMessageDialog(pPrincipal, "ERROR inesperado: " + e.getMessage(), "ERROR", -1);
         }
     }
-
+    /**
+     * Acción ejecutada al presionar el botón "Cancelar" o cerrar el cuadro de diálogo.
+     * Cierra el cuadro de diálogo.
+     */
     private void onCancel() {
         // add your code here if necessary
         dispose();

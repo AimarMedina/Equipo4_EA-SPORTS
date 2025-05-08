@@ -6,7 +6,9 @@ import Excepciones.CampoObligatorioException;
 import javax.swing.*;
 import java.awt.event.*;
 import java.util.Objects;
-
+/**
+ * Clase que representa la ventana de inicio de sesión.
+ */
 public class VentanaIniciarSesionV2 extends JFrame {
     private JPanel pPrincipal;
     private JLabel Titulo;
@@ -14,7 +16,12 @@ public class VentanaIniciarSesionV2 extends JFrame {
     private JTextField nombre;
     private JPasswordField contrasena;
     private JButton iniciarSesiónButton;
-
+    /**
+     * Constructor de la clase VentanaIniciarSesionV2.
+     * Configura la ventana de inicio de sesión, inicializa los componentes y define los eventos de los botones.
+     *
+     * @param tipoUsuario Tipo de usuario que está iniciando sesión (Administrador o Usuario).
+     */
     public VentanaIniciarSesionV2(String tipoUsuario) {
         setTitle("Iniciando sesión como "+ tipoUsuario);
         setContentPane(pPrincipal);
@@ -47,7 +54,12 @@ public class VentanaIniciarSesionV2 extends JFrame {
             }
         });
     }
-
+    /**
+     * Método que gestiona el proceso de inicio de sesión.
+     * Valida los campos obligatorios y verifica las credenciales del usuario.
+     *
+     * @param tipoUsuario Tipo de usuario que está iniciando sesión (Administrador o Usuario).
+     */
     public void iniciarSesion(String tipoUsuario) {
         String passw = new String(contrasena.getPassword());
         try {

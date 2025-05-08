@@ -9,7 +9,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.Objects;
-
+/**
+ * Clase que representa la ventana principal del administrador.
+ */
 public class VentanaAdministradorV2 extends JFrame {
     private JPanel pPincipal;
     private JLabel Titulo;
@@ -19,7 +21,12 @@ public class VentanaAdministradorV2 extends JFrame {
     private JButton retroceder;
     private JButton competicion;
     private JButton enfrentamientos;
-
+    /**
+     * Constructor de la clase VentanaAdministradorV2.
+     * Configura la ventana principal del administrador, inicializa los componentes y define los eventos de los botones.
+     *
+     * @param nombre Nombre del usuario administrador que se mostrará en la ventana.
+     */
     public VentanaAdministradorV2(String nombre) {
         setTitle("Usuario: "+nombre);
         setContentPane(pPincipal);
@@ -113,17 +120,13 @@ public class VentanaAdministradorV2 extends JFrame {
 
             }
         };
-
+// Asigna el evento de cambio de cursor a los botones
         jugadores.addMouseListener(listener);
         equipos.addMouseListener(listener);
         jornadas.addMouseListener(listener);
         enfrentamientos.addMouseListener(listener);
         competicion.addMouseListener(listener);
         retroceder.addMouseListener(listener);
-    }
-    public static void main(String[] args) {
-        VentanaAdministradorV2 ventana = new VentanaAdministradorV2("admin1");
-        ventana.setVisible(true);
     }
 
 }

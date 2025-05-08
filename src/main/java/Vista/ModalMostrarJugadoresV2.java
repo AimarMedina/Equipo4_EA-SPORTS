@@ -10,12 +10,17 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.List;
 import java.util.Objects;
-
+/**
+ * Clase que representa un cuadro de diálogo para mostrar la lista de jugadores.
+ */
 public class ModalMostrarJugadoresV2 extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JTable tablaJugadores;
-
+    /**
+     * Constructor de la clase ModalMostrarJugadoresV2.
+     * Configura el cuadro de diálogo, inicializa los componentes y define los eventos de los botones.
+     */
     public ModalMostrarJugadoresV2() {
         setContentPane(contentPane);
         setModal(true);
@@ -75,19 +80,20 @@ public class ModalMostrarJugadoresV2 extends JDialog {
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     }
 
+    /**
+     * Acción ejecutada al presionar el botón "OK".
+     * Cierra el cuadro de diálogo.
+     */
     private void onOK() {
-        // add your code here
         dispose();
     }
 
+    /**
+     * Acción ejecutada al presionar el botón de cerrar o la tecla ESCAPE.
+     * Cierra el cuadro de diálogo.
+     */
     private void onCancel() {
-        // add your code here if necessary
         dispose();
     }
 
-    public static void main(String[] args) {
-        ModalMostrarJugadoresV2 dialog = new ModalMostrarJugadoresV2();
-        dialog.setVisible(true);
-        System.exit(0);
-    }
 }
