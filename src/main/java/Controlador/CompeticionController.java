@@ -33,6 +33,10 @@ public class CompeticionController {
                 //Comprobacion para cerrar la Competicion (Jugadores)
                 if(ModeloController.equiposConCantidadValidaDeJugadores()) {
                     cerrado = CompeticionDAO.cerrarCompeticion();
+                    if(cerrado) {
+                        CompeticionDAO.generarCalendarioCompe();
+                        JOptionPane.showMessageDialog(null, "Competicion cerrada");
+                    }
                 }else{
                     JOptionPane.showMessageDialog(null, "La cantidad valida de jugadores por equipos(min 2/max 6) no es valida para cerrar la competicion)");
                 }

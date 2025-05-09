@@ -21,7 +21,7 @@ public class EnfrentamientoDAO {
      * @param perdedor El nombre del equipo perdedor.
      * @param numJor   El número de la jornada a la que pertenece el enfrentamiento.
      */
-    public static void crearEnfrentamiento(LocalDate fecha, LocalTime hora,String ganador,String perdedor,int numJor){
+    public static void crearEnfrentamiento(LocalDate fecha, LocalDate hora,String ganador,String perdedor,int numJor){
         try {
             BaseDatos.abrirConexion();
             Connection con = BaseDatos.getCon();
@@ -31,7 +31,7 @@ public class EnfrentamientoDAO {
             PreparedStatement ps = con.prepareStatement(plantilla);
 
             ps.setDate(1, Date.valueOf(fecha));
-            ps.setTime(2, Time.valueOf(hora));
+            ps.setDate(2, Date.valueOf(hora));
             ps.setInt(3,numJor);
             ps.setInt(4,EquipoDAO.obtenerPKequipo(ganador));
             ps.setInt(5,EquipoDAO.obtenerPKequipo(perdedor));
@@ -57,7 +57,7 @@ public class EnfrentamientoDAO {
             Connection con = BaseDatos.getCon();
 
 
-            String plantilla = "SELECT idEnf,fecha,hora,ganadorenf,perdedorenf,idjornada From enfrentamientos";
+            String plantilla = "SELECT idEnf,fecha,TO_CHAR(hora, 'HH24:MI'),ganadorenf,perdedorenf,idjornada From enfrentamientos";
             PreparedStatement ps = con.prepareStatement(plantilla);
 
 
@@ -65,7 +65,7 @@ public class EnfrentamientoDAO {
             while (rs.next()) {
                 String idJorStr = String.valueOf(rs.getInt("idEnf"));
                 String fechaInicio = rs.getDate("fecha").toString();
-                String hora = Time.valueOf( rs.getString("hora")).toString();
+                String hora = rs.getDate("hora").toString();
                 String ganadorenf = EquipoDAO.buscarEquipoPK(rs.getInt("ganadorenf"));
                 String perdedorenf = EquipoDAO.buscarEquipoPK(rs.getInt("perdedorenf"));
                 String idjornada = rs.getString("idjornada");

@@ -35,9 +35,17 @@ public class VentanaGestionCompeticionV2 extends JFrame{
         cerrarCompe.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (VistaController.ModalConfirmarCerrarCompeV2()){
-                    VistaController.cerrarCompeticion();
+                try{
+                    if (!VistaController.estadoCompeticion()){
+                        throw new Exception("La competicion ya está cerrada");
+                    }
+                    if (VistaController.ModalConfirmarCerrarCompeV2()){
+                        VistaController.cerrarCompeticion();
+                    }
+                }catch (Exception ex){
+
                 }
+
             }
         });
 

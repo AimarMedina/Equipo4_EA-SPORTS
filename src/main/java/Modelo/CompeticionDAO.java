@@ -173,7 +173,7 @@ public class CompeticionDAO {
                 System.out.println("   Ganador: " + gandor_perdedor.get(0));
                 System.out.println("   Perdedor: " + gandor_perdedor.get(1));
 
-                EnfrentamientoDAO.crearEnfrentamiento(diaPartido,LocalTime.of(hora,minuto),gandor_perdedor.get(0),gandor_perdedor.get(1),numJor);
+                EnfrentamientoDAO.crearEnfrentamiento(diaPartido,fechaHoraPartido,gandor_perdedor.get(0),gandor_perdedor.get(1),numJor);
                 EquipoDAO.insertarGanador(gandor_perdedor.get(0));
             }
 
