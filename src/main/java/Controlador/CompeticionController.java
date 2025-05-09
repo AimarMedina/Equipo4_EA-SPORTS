@@ -26,6 +26,7 @@ public class CompeticionController {
      *
      * @return true si la competición se cerró correctamente, false en caso contrario.
      */
+
     public static boolean cerrarCompeticion() {
         boolean cerrado = false;
         if (ModeloController.hayMasDeDosEquipos()) {
@@ -44,6 +45,7 @@ public class CompeticionController {
         }
         return cerrado;
     }
+
     /**
      * Verifica si ya existe una competición creada en la base de datos.
      *
@@ -53,6 +55,7 @@ public class CompeticionController {
         return CompeticionDAO.verificarCompeticionCreada();
 
     }
+
     /**
      * Verifica el estado actual de la competición.
      *

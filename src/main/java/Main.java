@@ -1,7 +1,6 @@
 import Controlador.VistaController;
 import Modelo.CompeticionDAO;
 
-
 public class Main {
 
     /**
