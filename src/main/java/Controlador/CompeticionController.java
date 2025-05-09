@@ -61,4 +61,6 @@ public class CompeticionController {
     public static boolean estadoCompeticion() {
         return CompeticionDAO.estadoCompeticion();
     }
+
+
 }

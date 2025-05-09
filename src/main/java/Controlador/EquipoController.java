@@ -82,6 +82,9 @@ public class EquipoController {
     public static int obtenerPKequipo(String nombre){
         return EquipoDAO.obtenerPKequipo(nombre);
     }
+
+
+
     //Comprobacion para cerrar Competicion(Equipos)
     /**
      * Verifica si hay más de dos equipos registrados en la base de datos.
@@ -99,6 +102,7 @@ public class EquipoController {
     public static boolean hayCantidadParDeEquipos() {
         return EquipoDAO.hayCantidadParDeEquipos();
     }
+
 
 
 }

@@ -286,8 +286,8 @@ public class ModeloController {
      * @param cambiarRoles Indica si se deben actualizar los roles del jugador en el equipo.
      * @return true si el jugador fue modificado correctamente, false en caso contrario.
      */
-    public static boolean modificarJugador(String nombre, String apellido, String nacionalidad, LocalDate fecha, String nickname, Float sueldoFloat, String rol, String equipo,Boolean duplicado,String nickname_viejo,Boolean cambiarRoles) {
-        return JugadorController.modificarJugador(nombre,apellido,nacionalidad,fecha,nickname,sueldoFloat,rol,equipo,duplicado,nickname_viejo,cambiarRoles);
+    public static boolean modificarJugador(String nombre, String apellido, String nacionalidad, LocalDate fecha, String nickname, Float sueldoFloat, String rol, String equipo,Boolean duplicado,String nickname_viejo) {
+        return JugadorController.modificarJugador(nombre,apellido,nacionalidad,fecha,nickname,sueldoFloat,rol,equipo,duplicado,nickname_viejo);
     }
     /**
      * Obtiene la cantidad de jugadores que pertenecen a un equipo específico.

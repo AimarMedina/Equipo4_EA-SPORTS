@@ -4,9 +4,8 @@ import Controlador.ModeloController;
 import Controlador.VistaController;
 
 import javax.swing.*;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.io.*;
+import java.sql.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -82,7 +81,11 @@ public class CompeticionDAO {
                 filasSelect=filas.getInt("cant");
             }
         }catch (Exception e){
-            JOptionPane.showMessageDialog(null, "Error al conectarse a la base de datos", "Error", JOptionPane.ERROR_MESSAGE);
+            if (e instanceof SQLSyntaxErrorException) {
+                filasSelect = 0;
+            } else {
+                JOptionPane.showMessageDialog(null, "Error al conectarse a la base de datos", "Error", JOptionPane.ERROR_MESSAGE);
+            }
         }
         return filasSelect;
     }
@@ -178,5 +181,7 @@ public class CompeticionDAO {
             rotacion.add(1, rotacion.remove(rotacion.size() - 1));
         }
     }
+
+
 
 }

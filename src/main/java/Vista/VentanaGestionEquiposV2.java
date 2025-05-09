@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.List;
 import java.util.Objects;
 
 public class VentanaGestionEquiposV2 extends JFrame {
@@ -17,6 +18,7 @@ public class VentanaGestionEquiposV2 extends JFrame {
     private JButton mostrarEquipo;
     private JButton retroceder;
     private JPanel pPrincipal;
+    private List<String> equipos = VistaController.listaEquipos();
 
     public VentanaGestionEquiposV2(String nombre) {
 
@@ -81,13 +83,27 @@ public class VentanaGestionEquiposV2 extends JFrame {
         eliminarEquipo.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                VistaController.ModalEliminacionEquiposV2();
+                try{
+                    if(equipos.isEmpty()){
+                        throw new Exception("No hay equipos para eliminar");
+                    }
+                    VistaController.ModalEliminacionEquiposV2();
+                }catch (Exception ex){
+                    JOptionPane.showMessageDialog(null, ex.getMessage(), "Error", JOptionPane.INFORMATION_MESSAGE);
+                }
             }
         });
         mostrarEquipo.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                VistaController.ModalMostrarEquiposV2();
+                try{
+                    if(equipos.isEmpty()){
+                        throw new Exception("No hay equipos para mostrar");
+                    }
+                    VistaController.ModalMostrarEquiposV2();
+                }catch (Exception ex){
+                    JOptionPane.showMessageDialog(null, ex.getMessage(), "Error", JOptionPane.INFORMATION_MESSAGE);
+                }
             }
         });
         inscribirEquipo.addActionListener(new ActionListener() {
@@ -99,7 +115,14 @@ public class VentanaGestionEquiposV2 extends JFrame {
         modificarEquipo.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                VistaController.ModalSeleccionarEquipoV2();
+                try{
+                    if(equipos.isEmpty()){
+                        throw new Exception("No hay equipos para modificar");
+                    }
+                    VistaController.ModalSeleccionarEquipoV2();
+                }catch (Exception ex){
+                    JOptionPane.showMessageDialog(null, ex.getMessage(), "Error", JOptionPane.INFORMATION_MESSAGE);
+                }
             }
         });
     }

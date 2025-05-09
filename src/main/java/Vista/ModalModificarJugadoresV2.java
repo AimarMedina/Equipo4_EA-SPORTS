@@ -220,9 +220,8 @@ public class ModalModificarJugadoresV2 extends JDialog {
             }
 
             String rol_viejo = VistaController.obtenerRolJugadorNick(nickname_viejo);
-            boolean cambiarRoles = !rol_viejo.equals(rol);
 
-            if (VistaController.modificarJugador(nombre, apellido, nacionalidad, fecha, nickname, sueldoFloat, rol, equipo, duplicado,nickname_viejo,cambiarRoles)) {
+            if (VistaController.modificarJugador(nombre, apellido, nacionalidad, fecha, nickname, sueldoFloat, rol, equipo, duplicado,nickname_viejo)) {
                 JOptionPane.showMessageDialog(pPrincipal, "Se ha modificado correctamente el jugador", "Alerta", JOptionPane.INFORMATION_MESSAGE);
                 switch (JOptionPane.showConfirmDialog(pPrincipal, "Desea Modificar otro jugador?", "Pregunta", JOptionPane.YES_NO_OPTION)) {
                     case 0:

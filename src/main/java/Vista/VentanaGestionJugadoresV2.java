@@ -88,19 +88,40 @@ public class VentanaGestionJugadoresV2 extends JFrame {
         eliminarJugador.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                VistaController.ModalEliminacionJugadoresV2();
+                try{
+                    if(VistaController.obtenerJugadores().isEmpty()){
+                        throw new Exception("No hay jugadores para eliminar");
+                    }
+                    VistaController.ModalEliminacionJugadoresV2();
+                }catch (Exception ex){
+                    JOptionPane.showMessageDialog(null, ex.getMessage(), "Error", JOptionPane.INFORMATION_MESSAGE);
+                }
             }
         });
         modificarJugador.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                VistaController.ModalSeleccionarJugadorV2();
+                try{
+                    if(VistaController.obtenerJugadores().isEmpty()){
+                        throw new Exception("No hay jugadores para modificar");
+                    }
+                    VistaController.ModalSeleccionarJugadorV2();
+                }catch (Exception ex){
+                    JOptionPane.showMessageDialog(null, ex.getMessage(), "Error", JOptionPane.INFORMATION_MESSAGE);
+                }
             }
         });
         mostrarJugadores.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                VistaController.ModalMostrarJugadoresV2();
+                try{
+                    if(VistaController.obtenerJugadores().isEmpty()){
+                        throw new Exception("No hay jugadores para mostrar");
+                    }
+                    VistaController.ModalMostrarJugadoresV2();
+                }catch (Exception ex){
+                    JOptionPane.showMessageDialog(null, ex.getMessage(), "Error", JOptionPane.INFORMATION_MESSAGE);
+                }
             }
         });
 

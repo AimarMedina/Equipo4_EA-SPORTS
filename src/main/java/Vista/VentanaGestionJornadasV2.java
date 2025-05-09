@@ -49,7 +49,15 @@ public class VentanaGestionJornadasV2 extends JFrame{
         mostrarEnfrentamientos.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                VistaController.ModalMostrarJornadasV2();
+
+                try{
+                    if(VistaController.obtenerJornadas().isEmpty()){
+                        throw new Exception("No hay jornadas para mostrar");
+                    }
+                    VistaController.ModalMostrarJornadasV2();
+                }catch (Exception ex){
+                    JOptionPane.showMessageDialog(null, ex.getMessage(), "Error", JOptionPane.INFORMATION_MESSAGE);
+                }
             }
         });
     }

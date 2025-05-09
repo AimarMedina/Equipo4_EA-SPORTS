@@ -49,7 +49,14 @@ public class VentanaGestionEnfrentamientosV2 extends JFrame{
         mostrarEnfrentamientos.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                VistaController.ModalMostrarEnfrentamientosV2();
+                try{
+                    if(VistaController.obtenerEnfretamientos().isEmpty()){
+                        throw new Exception("No hay enfrentamientos para mostrar");
+                    }
+                    VistaController.ModalMostrarEnfrentamientosV2();
+                }catch (Exception ex){
+                    JOptionPane.showMessageDialog(null, ex.getMessage(), "Error", JOptionPane.INFORMATION_MESSAGE);
+                }
             }
         });
     }

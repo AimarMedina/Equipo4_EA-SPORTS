@@ -24,7 +24,13 @@ public class VentanaPrincipalV2 extends JFrame {
         comenzarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                VistaController.VentanaSelccionUsuarioV2(VentanaPrincipalV2.this);
+                if (VistaController.verificarCompeticionCreada() >0){
+                    VistaController.VentanaSelccionUsuarioV2(VentanaPrincipalV2.this);
+                }
+                else {
+                    VistaController.abrirCompeticion();
+                    VistaController.VentanaSelccionUsuarioV2(VentanaPrincipalV2.this);
+                }
             }
         });
     }

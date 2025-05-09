@@ -147,14 +147,11 @@ public class JugadorController {
      * @param equipo Nombre del equipo al que pertenece el jugador.
      * @param duplicado Indica si el nickname ya existe en la base de datos.
      * @param nickname_viejo Nickname actual del jugador que se desea modificar.
-     * @param cambiarRoles Indica si se deben actualizar los roles del jugador en el equipo.
      * @return true si el jugador fue modificado correctamente, false en caso contrario.
      */
-    public static boolean modificarJugador(String nombre, String apellido, String nacionalidad, LocalDate fecha, String nickname, Float sueldoFloat, String rol, String equipo,Boolean duplicado,String nickname_viejo,Boolean cambiarRoles) {
-        if (cambiarRoles){
-            EquipoRolesDAO.eliminarRolEquipo(rol,equipo);
-            EquipoRolesDAO.insertarRolJugadorEliminado(nickname_viejo);
-        }
+    public static boolean modificarJugador(String nombre, String apellido, String nacionalidad, LocalDate fecha, String nickname, Float sueldoFloat, String rol, String equipo,Boolean duplicado,String nickname_viejo) {
+        EquipoRolesDAO.eliminarRolEquipo(rol,equipo);
+        EquipoRolesDAO.insertarRolJugadorEliminado(nickname_viejo);
         return JugadorDAO.modificarJugador(nombre,apellido,nacionalidad,fecha,nickname,sueldoFloat,rol,equipo,duplicado,nickname_viejo);
     }
     /**

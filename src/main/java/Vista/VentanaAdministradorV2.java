@@ -71,7 +71,14 @@ public class VentanaAdministradorV2 extends JFrame {
         jugadores.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                VistaController.VentanaGestionJugadoresV2(VentanaAdministradorV2.this,nombre);
+                try{
+                    if(VistaController.listaEquipos().isEmpty()){
+                        throw new Exception("Para poder gestionar jugadores primero a de haber equipos inscritos");
+                    }
+                    VistaController.VentanaGestionJugadoresV2(VentanaAdministradorV2.this,nombre);
+                }catch (Exception ex){
+                    JOptionPane.showMessageDialog(null, ex.getMessage(), "Error", JOptionPane.INFORMATION_MESSAGE);
+                }
             }
         });
         equipos.addActionListener(new ActionListener() {

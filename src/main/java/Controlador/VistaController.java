@@ -35,8 +35,8 @@ public class VistaController {
                 return ModeloController.eliminarJugador(jugadorSeleccionado);
             }
 
-            public static boolean modificarJugador(String nombre, String apellido, String nacionalidad, LocalDate fecha, String nickname, Float sueldoFloat, String rol, String equipo,Boolean duplicado,String nickname_viejo,Boolean cambiarRoles) {
-                return ModeloController.modificarJugador(nombre,apellido,nacionalidad,fecha,nickname,sueldoFloat,rol,equipo,duplicado,nickname_viejo,cambiarRoles);
+            public static boolean modificarJugador(String nombre, String apellido, String nacionalidad, LocalDate fecha, String nickname, Float sueldoFloat, String rol, String equipo,Boolean duplicado,String nickname_viejo) {
+                return ModeloController.modificarJugador(nombre,apellido,nacionalidad,fecha,nickname,sueldoFloat,rol,equipo,duplicado,nickname_viejo);
             }
 
             public static List<String[]> obtenerJugadores() {
@@ -58,6 +58,7 @@ public class VistaController {
             public static String obtenerRolJugadorNick(String nickname){
                 return ModeloController.obtenerRolJugadorNick(nickname);
             }
+
 
         /**
         *EQUIPO
@@ -99,6 +100,11 @@ public class VistaController {
             public static List<String[]> obtenerJornadas(){
                 return ModeloController.obtenerJornadas();
             }
+
+        /**
+         *ENFRENTAMIENTOS
+         */
+            public static List<String[]> obtenerEnfretamientos(){return ModeloController.obtenerEnfrentamientos();}
 
         /**
         *COMPETICION

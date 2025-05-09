@@ -60,7 +60,7 @@ public class VentanaIniciarSesionV2 extends JFrame {
             else{
                 if (VistaController.inciarSesionUsuario(nombre.getText(),passw,tipoUsuario)){
                     switch (tipoUsuario){
-                        case "Adminstrador":
+                        case "Administrador":
                             VistaController.VentanaAdministradorV2(nombre.getText(),VentanaIniciarSesionV2.this);
                             break;
                         case "Usuario":
