@@ -45,7 +45,7 @@ Enlace para visualizar interfaz grafica hecha con <a href="https://www.figma.com
 
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/Equipo-4-EA-SPORTS/EA-sports.git
+   git clone git@github.com:AimarMedina/Equipo4_EA-SPORTS.git
    ```
 
 2. Abre el proyecto en IntelliJ IDEA o cualquier IDE compatible.
