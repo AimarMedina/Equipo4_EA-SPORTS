@@ -21,9 +21,9 @@ public class BaseDatos
     public static void abrirConexion() throws Exception
     {
         Class.forName("oracle.jdbc.OracleDriver");
-        String user = "equipoMedina"; //poner user y contra de la bd de oracle
-        String password = "Jm12345";
-        String url ="jdbc:oracle:thin:@ccsatserv.dnsdojo.com:1521/xepdb1";
+        String user = "eqdaw04"; //poner user y contra de la bd de oracle
+        String password = "eqdaw04";
+        String url ="jdbc:oracle:thin:@SrvOracle:1521:orcl";
         con = DriverManager.getConnection(url, user, password);
     }
 
