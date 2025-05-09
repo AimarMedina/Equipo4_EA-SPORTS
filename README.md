@@ -93,7 +93,11 @@ En esta ventana se muestran dos opciones
 
 - Se usó **JUnit 5** para pruebas unitarias.
 - Clases testeadas:
-> Añadir clases en las que se han hecho los test.
+> CompeticionDAO
+> EnfrentamientoDAO
+> JornadaDAO
+> JugadorDAO
+> EquipoDAO
 
 ---
 
