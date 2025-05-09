@@ -3,14 +3,19 @@ package Vista;
 import javax.swing.*;
 import java.awt.event.*;
 import java.util.Objects;
-
+/**
+ * Clase que representa un cuadro de diálogo de advertencia con opciones para confirmar o cancelar una acción.
+ */
 public class ModalAdvertencia extends JDialog {
     private JPanel pPrincipal;
     private JButton button1;
     private JButton eliminarButton;
     private JButton cancelarButton;
     private boolean confirmado = false;
-
+    /**
+     * Clase que representa un cuadro de diálogo de advertencia con opciones para confirmar o cancelar una acción.
+     * Extiende la clase {@link JDialog}.
+     */
     public ModalAdvertencia() {
         setContentPane(pPrincipal);
         setModal(true);
@@ -42,14 +47,13 @@ public class ModalAdvertencia extends JDialog {
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
     }
-
+    /**
+     * Verifica si la acción fue confirmada.
+     *
+     * @return true si se confirmó la acción, false en caso contrario.
+     */
     public boolean isConfirmado() {
         return confirmado;
     }
-    public static void main(String[] args) {
-        ModalAdvertencia dialog = new ModalAdvertencia();
-        dialog.pack();
-        dialog.setVisible(true);
-        System.exit(0);
-    }
+
 }

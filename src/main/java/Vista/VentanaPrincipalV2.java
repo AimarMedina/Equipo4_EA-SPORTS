@@ -7,12 +7,17 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Objects;
-
+/**
+ * Clase que representa la ventana principal de la aplicación.
+ */
 public class VentanaPrincipalV2 extends JFrame {
     private JButton button1;
     private JButton comenzarButton;
     private JPanel pPrincipal;
-
+    /**
+     * Constructor de la clase VentanaPrincipalV2.
+     * Configura la ventana principal, inicializa los componentes y define los eventos de los botones.
+     */
     public VentanaPrincipalV2() {
         setContentPane(pPrincipal);
         pack();
@@ -33,10 +38,5 @@ public class VentanaPrincipalV2 extends JFrame {
                 }
             }
         });
-    }
-
-    public static void main(String[] args) {
-        VentanaPrincipalV2 ventana = new VentanaPrincipalV2();
-        ventana.setVisible(true);
     }
 }

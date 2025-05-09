@@ -6,14 +6,19 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.Objects;
-
+/**
+ * Clase que representa la ventana de selección de usuario.
+ */
 public class VentanaSeleccionUsuarioV2 extends JFrame{
     private JButton usuario;
     private JButton administrador;
     private JButton helpUsuario;
     private JButton helpAdministrador;
     private JPanel pPrincipal;
-
+    /**
+     * Constructor de la clase VentanaSeleccionUsuarioV2.
+     * Configura la ventana de selección de usuario, inicializa los componentes y define los eventos de los botones.
+     */
     public VentanaSeleccionUsuarioV2() {
 
         setContentPane(pPrincipal);

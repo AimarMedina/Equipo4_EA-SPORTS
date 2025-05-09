@@ -8,12 +8,17 @@ import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-
+/**
+ * Clase que representa un cuadro de diálogo para seleccionar un equipo a modificar.
+ */
 public class ModalSeleccionEquipoV2 extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JComboBox comboBox1;
-
+    /**
+     * Constructor de la clase ModalSeleccionEquipoV2.
+     * Configura el cuadro de diálogo, inicializa los componentes y define los eventos de los botones.
+     */
     public ModalSeleccionEquipoV2() {
         setContentPane(contentPane);
         setModal(true);
@@ -53,7 +58,11 @@ public class ModalSeleccionEquipoV2 extends JDialog {
             }
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     }
-
+    /**
+     * Acción ejecutada al presionar el botón "OK".
+     * Verifica que se haya seleccionado un equipo y abre el cuadro de diálogo para modificarlo.
+     * Muestra un mensaje de error si no se selecciona un equipo.
+     */
     private void onOK() {
         try{
             if (comboBox1.getSelectedIndex() != 0) {
@@ -70,15 +79,13 @@ public class ModalSeleccionEquipoV2 extends JDialog {
 
 
     }
-
+    /**
+     * Acción ejecutada al presionar el botón de cerrar o la tecla ESCAPE.
+     * Cierra el cuadro de diálogo.
+     */
     private void onCancel() {
         // add your code here if necessary
         dispose();
     }
 
-    public static void main(String[] args) {
-        ModalSeleccionEquipoV2 dialog = new ModalSeleccionEquipoV2();
-        dialog.setVisible(true);
-        System.exit(0);
-    }
 }

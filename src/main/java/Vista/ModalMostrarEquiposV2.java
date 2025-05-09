@@ -10,11 +10,17 @@ import java.awt.event.*;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * Clase que representa un cuadro de diálogo para mostrar la lista de equipos.
+ */
 public class ModalMostrarEquiposV2 extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JTable tablaEquipos;
-
+    /**
+     * Constructor de la clase ModalMostrarEquiposV2.
+     * Configura el cuadro de diálogo, inicializa los componentes y define los eventos de los botones.
+     */
     public ModalMostrarEquiposV2() {
         setContentPane(contentPane);
         setModal(true);
@@ -41,7 +47,7 @@ public class ModalMostrarEquiposV2 extends JDialog {
 
         tablaEquipos.setModel(modelo);
         tablaEquipos.setEnabled(false); // Para que no se pueda editar
-
+        // Habilitar el ordenamiento de las filas
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
         centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
         for (int i = 0; i < tablaEquipos.getColumnCount(); i++) {
@@ -74,19 +80,20 @@ public class ModalMostrarEquiposV2 extends JDialog {
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     }
 
+    /**
+     * Acción ejecutada al presionar el botón "OK".
+     * Cierra el cuadro de diálogo.
+     */
     private void onOK() {
-        // add your code here
         dispose();
     }
 
+    /**
+     * Acción ejecutada al presionar el botón de cerrar o la tecla ESCAPE.
+     * Cierra el cuadro de diálogo.
+     */
     private void onCancel() {
-        // add your code here if necessary
         dispose();
     }
 
-    public static void main(String[] args) {
-        ModalMostrarEquiposV2 dialog = new ModalMostrarEquiposV2();
-        dialog.setVisible(true);
-        System.exit(0);
-    }
 }

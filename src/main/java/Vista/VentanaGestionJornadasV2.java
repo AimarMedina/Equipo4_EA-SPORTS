@@ -9,12 +9,19 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.Objects;
-
+/**
+ * Clase que representa la ventana de gestión de jornadas.
+ */
 public class VentanaGestionJornadasV2 extends JFrame{
     private JPanel panel1;
     private JButton mostrarEnfrentamientos;
     private JButton retroceder;
-
+    /**
+     * Constructor de la clase VentanaGestionJornadasV2.
+     * Configura la ventana de gestión de jornadas, inicializa los componentes y define los eventos de los botones.
+     *
+     * @param nombre Nombre del usuario administrador que se mostrará en la ventana.
+     */
     public VentanaGestionJornadasV2(String nombre)  {
         setContentPane(panel1);
         setTitle("Gestion de Jornadas");

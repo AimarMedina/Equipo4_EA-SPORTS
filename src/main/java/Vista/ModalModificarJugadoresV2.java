@@ -13,7 +13,9 @@ import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-
+/**
+ * Clase que representa un cuadro de diálogo para modificar los datos de un jugador.
+ */
 public class ModalModificarJugadoresV2 extends JDialog {
     private JPanel pPrincipal;
     private JPanel datosPersonales;
@@ -34,7 +36,12 @@ public class ModalModificarJugadoresV2 extends JDialog {
     private String nickname_viejo;
     private List<String> listaEquipos = new ArrayList<>();
 
-
+    /**
+     * Constructor de la clase ModalModificarJugadoresV2.
+     * Configura el cuadro de diálogo, inicializa los componentes y define los eventos de los botones.
+     *
+     * @param jugador Nickname del jugador que se desea modificar.
+     */
     public ModalModificarJugadoresV2(String jugador) {
         setContentPane(pPrincipal);
         setModal(true);
@@ -146,6 +153,11 @@ public class ModalModificarJugadoresV2 extends JDialog {
             }
         });
     }
+    /**
+     * Acción ejecutada al presionar el botón "Enviar".
+     * Valida los datos ingresados, verifica duplicados y realiza la modificación si es válida.
+     * Muestra mensajes de error en caso de datos incorrectos.
+     */
     private void onOK() {
         try {
             String nombre = nombreTF.getText();
@@ -245,6 +257,12 @@ public class ModalModificarJugadoresV2 extends JDialog {
             JOptionPane.showMessageDialog(pPrincipal, "ERROR inesperado: " + e.getMessage(), "ERROR", -1);
         }
     }
+    /**
+     * Actualiza los roles disponibles según el equipo seleccionado.
+     *
+     * @param equipo Nombre del equipo seleccionado.
+     * @return Lista de roles disponibles para el equipo.
+     */
     public static List<String> actualizarRoles(String equipo) {
         return VistaController.obtenerRoles(equipo);
     }

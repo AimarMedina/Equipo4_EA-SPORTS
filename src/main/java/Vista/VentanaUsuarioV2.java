@@ -11,13 +11,20 @@ import java.awt.event.MouseEvent;
 import java.util.Objects;
 
 public class VentanaUsuarioV2 extends javax.swing.JFrame {
-
+    /**
+     * Clase que representa la ventana principal para los usuarios.
+     */
     private JPanel panel1;
     private JLabel Titulo;
     private JButton mostrarInformeEquipos;
     private JButton mostrarInformeUltimaJornada;
     private JButton retroceder;
-
+    /**
+     * Constructor de la clase VentanaUsuarioV2.
+     * Configura la ventana principal del usuario, inicializa los componentes y define los eventos de los botones.
+     *
+     * @param nombre Nombre del usuario que se mostrará en la ventana.
+     */
     public VentanaUsuarioV2(String nombre) {
         setContentPane(panel1);
         pack();

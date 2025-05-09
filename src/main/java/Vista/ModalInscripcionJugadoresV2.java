@@ -12,7 +12,9 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.List;
 import java.util.Objects;
-
+/**
+ * Clase que representa un cuadro de diálogo para la inscripción de jugadores.
+ */
 public class ModalInscripcionJugadoresV2 extends JDialog {
     private JPanel pPrincipal;
     private JPanel datosPersonales;
@@ -31,7 +33,10 @@ public class ModalInscripcionJugadoresV2 extends JDialog {
     private JButton siguienteButton;
     private JButton cancelar;
 
-
+    /**
+     * Constructor de la clase ModalInscripcionJugadoresV2.
+     * Configura el cuadro de diálogo, inicializa los componentes y define los eventos de los botones.
+     */
     public ModalInscripcionJugadoresV2() {
         setContentPane(pPrincipal);
         setModal(true);
@@ -141,6 +146,11 @@ public class ModalInscripcionJugadoresV2 extends JDialog {
             }
         });
     }
+    /**
+     * Acción ejecutada al presionar el botón "Enviar".
+     * Valida los datos ingresados, verifica duplicados y realiza la inscripción si es válida.
+     * Muestra mensajes de error en caso de datos incorrectos.
+     */
     private void onOK() {
         try {
             String nombre = nombreTF.getText();
@@ -235,10 +245,12 @@ public class ModalInscripcionJugadoresV2 extends JDialog {
             JOptionPane.showMessageDialog(pPrincipal, "ERROR inesperado: " + e.getMessage(), "ERROR", -1);
         }
     }
-    public static void main(String[] args) {
-        ModalInscripcionJugadoresV2 ventana = new ModalInscripcionJugadoresV2();
-        ventana.setVisible(true);
-    }
+    /**
+     * Actualiza los roles disponibles según el equipo seleccionado.
+     *
+     * @param equipo Nombre del equipo seleccionado.
+     * @return Lista de roles disponibles para el equipo.
+     */
     public static List<String> actualizarRoles(String equipo) {
         return VistaController.obtenerRoles(equipo);
     }

@@ -7,7 +7,9 @@ import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-
+/**
+ * Clase que representa un cuadro de diálogo para seleccionar el equipo ganador y perdedor de una jornada.
+ */
 public class ModalSeleccionGanadroV2 extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
@@ -20,6 +22,14 @@ public class ModalSeleccionGanadroV2 extends JDialog {
     private String perdedor;
     private List<String> equiposGandor_Perdedor = new ArrayList<>();
 
+    /**
+     * Constructor de la clase ModalSeleccionGanadroV2.
+     * Configura el cuadro de diálogo, inicializa los componentes y define los eventos de los botones.
+     *
+     * @param equiposJugando Lista con los nombres de los equipos que están jugando.
+     * @param numJor Número de la jornada actual.
+     * @return Lista con el equipo ganador y el equipo perdedor.
+     */
     public List<String> ModalSeleccionGanadroV2(List<String> equiposJugando,int numJor) {
         setContentPane(contentPane);
         setModal(true);
@@ -62,7 +72,12 @@ public class ModalSeleccionGanadroV2 extends JDialog {
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
         return equiposGandor_Perdedor;
     }
-
+    /**
+     * Acción ejecutada al presionar el botón "OK".
+     * Determina el equipo ganador y el perdedor según la selección realizada.
+     *
+     * @return Lista con el equipo ganador y el equipo perdedor.
+     */
     private List<String> onOK() {
 
 
@@ -81,11 +96,19 @@ public class ModalSeleccionGanadroV2 extends JDialog {
             return equiposGandor_Perdedor;
     }
 
+    /**
+     * Acción ejecutada al presionar el botón de cerrar o la tecla ESCAPE.
+     * Cierra el cuadro de diálogo.
+     */
     private void onCancel() {
-        // add your code here if necessary
         dispose();
     }
 
+    /**
+     * Obtiene la lista con el equipo ganador y el equipo perdedor.
+     *
+     * @return Lista con el equipo ganador y el equipo perdedor.
+     */
     public List<String> getGanadorPerdedor() {
         return equiposGandor_Perdedor;
     }

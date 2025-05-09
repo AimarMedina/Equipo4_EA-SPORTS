@@ -10,7 +10,9 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.List;
 import java.util.Objects;
-
+/**
+ * Clase que representa la ventana de gestión de equipos.
+ */
 public class VentanaGestionEquiposV2 extends JFrame {
     private JButton inscribirEquipo;
     private JButton eliminarEquipo;
@@ -18,6 +20,12 @@ public class VentanaGestionEquiposV2 extends JFrame {
     private JButton mostrarEquipo;
     private JButton retroceder;
     private JPanel pPrincipal;
+    /**
+     * Constructor de la clase VentanaGestionEquiposV2.
+     * Configura la ventana de gestión de equipos, inicializa los componentes y define los eventos de los botones.
+     *
+     * @param nombre Nombre del usuario administrador que se mostrará en la ventana.
+     */
     private List<String> equipos = VistaController.listaEquipos();
 
     public VentanaGestionEquiposV2(String nombre) {

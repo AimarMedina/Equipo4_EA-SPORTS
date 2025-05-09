@@ -9,12 +9,17 @@ import javax.swing.table.TableRowSorter;
 import java.awt.event.*;
 import java.util.List;
 import java.util.Objects;
-
+/**
+ * Clase que representa un cuadro de diálogo para mostrar la lista de jornadas.
+ */
 public class ModalMostrarJornadasV2 extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JTable tablaJugadores;
-
+    /**
+     * Constructor de la clase ModalMostrarJornadasV2.
+     * Configura el cuadro de diálogo, inicializa los componentes y define los eventos de los botones.
+     */
     public ModalMostrarJornadasV2() {
         setContentPane(contentPane);
         setModal(true);
@@ -41,13 +46,13 @@ public class ModalMostrarJornadasV2 extends JDialog {
 
         tablaJugadores.setModel(modelo);
         tablaJugadores.setEnabled(false); // Para que no se pueda editar
-
+        // Centra el contenido de las celdas
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
         centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
         for (int i = 0; i < tablaJugadores.getColumnCount(); i++) {
             tablaJugadores.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
         }
-
+        // Habilita el ordenamiento de las filas
         TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(modelo);
         tablaJugadores.setRowSorter(sorter);
 
@@ -74,19 +79,20 @@ public class ModalMostrarJornadasV2 extends JDialog {
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     }
 
+    /**
+     * Acción ejecutada al presionar el botón "OK".
+     * Cierra el cuadro de diálogo.
+     */
     private void onOK() {
-        // add your code here
         dispose();
     }
 
+    /**
+     * Acción ejecutada al presionar el botón de cerrar o la tecla ESCAPE.
+     * Cierra el cuadro de diálogo.
+     */
     private void onCancel() {
-        // add your code here if necessary
         dispose();
     }
 
-    public static void main(String[] args) {
-        ModalMostrarJornadasV2 dialog = new ModalMostrarJornadasV2();
-        dialog.setVisible(true);
-        System.exit(0);
-    }
 }

@@ -11,7 +11,9 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.Objects;
-
+/**
+ * Clase que representa un cuadro de diálogo para la inscripción de equipos.
+ */
 public class ModalInscripcionEquipoV2 extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
@@ -23,7 +25,10 @@ public class ModalInscripcionEquipoV2 extends JDialog {
     private LocalDate fechaParseada;
     private LocalDate fechaMax = LocalDate.now();
     private LocalDate fechaMin = LocalDate.parse("02/06/2020", DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-
+    /**
+     * Constructor de la clase ModalInscripcionEquipoV2.
+     * Configura el cuadro de diálogo, inicializa los componentes y define los eventos de los botones.
+     */
     public ModalInscripcionEquipoV2() {
         setContentPane(contentPane);
         setModal(true);
@@ -62,7 +67,11 @@ public class ModalInscripcionEquipoV2 extends JDialog {
             }
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     }
-
+    /**
+     * Acción ejecutada al presionar el botón "OK".
+     * Valida los datos ingresados, verifica si el equipo ya existe y realiza la inscripción si es válida.
+     * Muestra mensajes de error en caso de datos incorrectos.
+     */
     private void onOK() {
         fechaParseada = LocalDate.parse(fecha.getText(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
 
@@ -92,15 +101,13 @@ public class ModalInscripcionEquipoV2 extends JDialog {
             JOptionPane.showMessageDialog(contentPane,"Error, formato de fecha incorrecto pruebe con (dd/mm/yyyy)", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
-
+    /**
+     * Acción ejecutada al presionar el botón "Cancelar" o cerrar el cuadro de diálogo.
+     * Cierra el cuadro de diálogo.
+     */
     private void onCancel() {
         // add your code here if necessary
         dispose();
     }
 
-    public static void main(String[] args) {
-        ModalInscripcionEquipoV2 dialog = new ModalInscripcionEquipoV2();
-        dialog.setVisible(true);
-        System.exit(0);
-    }
 }
