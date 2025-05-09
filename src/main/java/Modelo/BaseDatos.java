@@ -47,4 +47,8 @@ public class BaseDatos
     {
         con.close();
     }
+
+    public static void setCon(Connection mockConnection) {
+
+    }
 }
